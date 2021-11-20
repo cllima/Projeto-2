@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* 
+Mudar o layout de fixo para fluido/responsivo.
+Fixo => medidas fixas.
+Fluido => medidas em porcentagem.
+
+Contexto => Interface que tem o tamanho de 768px, dentro da resolução escolhida => 1.680px.
+Alvo => a resolução escolhida - 1680;
+
+Unidade de relatividade: contexto /alvo * 100
+768/1680 * 100 = 45.71428571428571
+
+150/768 * 100 => 19.53125
+618/768 * 100 => 80.46875
+
+150/618 * 100=> 24.27184466019417
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #cecece;
+    font-size: 100%;    /* Deixa responsivo */
+}
+
+#interface{
+    width: 45.71428571428571%;
+    margin: auto;
+    font-family: Verdana, arial, Geneva, Tahoma, sans-serif;
+    font-size: .625rem;
+    box-sizing: border-box;
+  
+}
+
+header#cabecalho{
+    height: 80px;
+    background-image: url('../images/topo_.jpg');
+   
+}
+
+nav li{
+    list-style-type: none;
+}
+/*#############################*/
+
+nav#menu{
+    width: 19.53125%; 
+    height: 400px;
+    background-color: #000;
+    float: left;
+    
+}
+
+nav#menu a{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: black;
+
+    margin: 1px;
+    padding: 5px;
+    border-left: 3px solid #f00;
+    border-bottom: 1px solid #cecece;
+
+    display: block;
+}
+
+nav#menu a:hover{
+    text-decoration: underline;
+    border-left-color: white;
+    background-color: #333;
+}
+/*#############################*/
+
+section#principal{
+    background-color: #ffffff;
+
+    width: 80.46875%;
+    height: 400px;
+
+    position: relative;
+    float: right;
+}
+
+section#principal aside{
+    background-color: #cecece; /*Fundo cinza dos botões*/
+    width: 24.27184466019417%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+section#principal aside a{
+    font-size: .8em;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white #333 #333 #333; /* Efeito de botão em profundidade*/
+
+    display: block;
+}
+
+section#principal aside a:hover{
+    text-decoration: underline;
+}
+
+section#principal header h1{
+    margin: 10px;
+}
+
+section#principal article p{
+    margin: 10px;
+}
+
+/*#############################*/
+
+footer#rodape{
+    color: #ffffff;
+    text-align: center;
+    
+    background-color: #600;
+
+    padding: 20px;
+    clear: both;
+}
